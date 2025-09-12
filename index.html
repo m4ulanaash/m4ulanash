@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maulana Syarif Hidayatullah</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    // Palet Warna Neon Dinamis
+                    colors: {
+                        'dark-bg': '#1A202C',
+                        'dark-card': '#2D3748',
+                        'light-text': '#EDF2F7',
+                        'brand-magenta': '#EC4899',
+                        'brand-cyan': '#06B6D4',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Animasi Latar Belakang Bintang Jatuh */
+        #background-wrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .particle {
+            position: absolute;
+            top: -10%; 
+            width: 2px;
+            background: linear-gradient(to bottom, rgba(236, 72, 153, 0.6), rgba(236, 72, 153, 0));
+            filter: drop-shadow(0 0 6px rgba(236, 72, 153, 0.8));
+            animation-name: fall;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        .particle.cyan {
+            background: linear-gradient(to bottom, rgba(6, 182, 212, 0.6), rgba(6, 182, 212, 0));
+            filter: drop-shadow(0 0 6px rgba(6, 182, 212, 0.8));
+        }
+        @keyframes fall {
+            from { transform: translateY(0vh) translateX(0vw) rotate(35deg); opacity: 1; }
+            to { transform: translateY(120vh) translateX(-50vw) rotate(35deg); opacity: 0; }
+        }
+        /* Sebaran posisi awal partikel */
+        .particle.p1 { left: 10%; animation-duration: 7s; animation-delay: 0s; height: 100px; }
+        .particle.p2 { left: 120%; animation-duration: 9s; animation-delay: 2s; height: 80px; }
+        .particle.p3 { left: 30%; animation-duration: 6s; animation-delay: 4s; height: 120px; }
+        .particle.p4 { left: 140%; animation-duration: 8s; animation-delay: 1s; height: 150px; }
+        .particle.p5 { left: 50%; animation-duration: 10s; animation-delay: 3s; height: 90px; }
+        .particle.p6 { left: 160%; animation-duration: 5s; animation-delay: 6s; }
+        .particle.p7 { left: 70%; animation-duration: 11s; animation-delay: 5s; }
+        .particle.p8 { left: 105%; animation-duration: 12s; animation-delay: 8s; height: 70px; }
+        .particle.p9 { left: 90%; animation-duration: 7s; animation-delay: 9s; }
+        .particle.p10 { left: 15%; animation-duration: 9s; animation-delay: 7s; height: 140px; }
+        .particle.p11 { left: 135%; animation-duration: 8s; animation-delay: 10s; }
+        .particle.p12 { left: 25%; animation-duration: 10s; animation-delay: 12s; }
+        .particle.p13 { left: 115%; animation-duration: 6s; animation-delay: 14s; height: 85px; }
+        .particle.p14 { left: 45%; animation-duration: 7s; animation-delay: 16s; }
+        .particle.p15 { left: 155%; animation-duration: 9s; animation-delay: 18s; height: 105px; }
+        .particle.p16 { left: 65%; animation-duration: 11s; animation-delay: 0.5s; }
+        .particle.p17 { left: 125%; animation-duration: 8s; animation-delay: 2.5s; height: 90px; }
+        .particle.p18 { left: 88%; animation-duration: 10s; animation-delay: 4.5s; }
+        .particle.p19 { left: 2%; animation-duration: 6s; animation-delay: 6.5s; height: 70px; }
+        .particle.p20 { left: 145%; animation-duration: 12s; animation-delay: 8.5s; height: 160px; }
+        .particle.p21 { left: 18%; animation-duration: 7s; animation-delay: 11s; }
+        .particle.p22 { left: 118%; animation-duration: 9s; animation-delay: 13s; height: 80px; }
+        .particle.p23 { left: 38%; animation-duration: 6s; animation-delay: 15s; }
+        .particle.p24 { left: 138%; animation-duration: 8s; animation-delay: 17s; }
+        .particle.p25 { left: 58%; animation-duration: 10s; animation-delay: 19s; height: 90px; }
+        .particle.p26 { left: 168%; animation-duration: 5s; animation-delay: 1.2s; }
+        .particle.p27 { left: 78%; animation-duration: 11s; animation-delay: 3.2s; }
+        .particle.p28 { left: 108%; animation-duration: 12s; animation-delay: 5.2s; height: 70px; }
+        .particle.p29 { left: 95%; animation-duration: 7s; animation-delay: 7.2s; }
+        .particle.p30 { left: 148%; animation-duration: 9s; animation-delay: 9.2s; height: 140px; }
+
+        /* Efek Teks Mengetik */
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: #EDF2F7;
+            margin-left: 8px;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="font-poppins bg-dark-bg text-light-text">
+
+    <div id="background-wrap">
+        <div class="particle p1"></div><div class="particle p2 cyan"></div><div class="particle p3"></div><div class="particle p4"></div><div class="particle p5 cyan"></div><div class="particle p6"></div><div class="particle p7"></div><div class="particle p8"></div><div class="particle p9 cyan"></div><div class="particle p10"></div><div class="particle p11"></div><div class="particle p12"></div><div class="particle p13 cyan"></div><div class="particle p14"></div><div class="particle p15"></div><div class="particle p16 cyan"></div><div class="particle p17"></div><div class="particle p18"></div><div class="particle p19"></div><div class="particle p20 cyan"></div><div class="particle p21"></div><div class="particle p22"></div><div class="particle p23 cyan"></div><div class="particle p24"></div><div class="particle p25"></div><div class="particle p26 cyan"></div><div class="particle p27"></div><div class="particle p28"></div><div class="particle p29 cyan"></div><div class="particle p30"></div>
+    </div>
+
+    <header class="bg-dark-bg/80 backdrop-blur-md shadow-lg shadow-black/30 sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-brand-magenta"><i>MSH</i></a>
+            
+            <button id="hamburger-btn" class="md:hidden z-50">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+
+            <ul id="nav-menu" class="hidden md:flex absolute md:relative top-full left-0 w-full md:w-auto bg-dark-card md:bg-transparent flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 py-8 md:py-0">
+                <li><a href="#home" class="nav-link font-semibold transition-colors duration-300">Home</a></li>
+                <li><a href="#about" class="nav-link font-semibold transition-colors duration-300">About</a></li>
+                <li><a href="#contact" class="nav-link font-semibold transition-colors duration-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="min-h-screen flex items-center justify-center text-center px-6 relative z-10">
+            <div class="max-w-3xl">
+                <h1 id="typing-h1" class="text-4xl md:text-6xl font-extrabold text-light-text leading-tight" style="min-height: 80px;"></h1>
+                <p id="typing-p" class="text-2xl md:text-4xl font-extrabold text-brand-magenta my-4" style="min-height: 56px;"></p>
+                <p class="text-lg md:text-xl text-light-text/80 mb-8">
+                    <i>Computer science student at IPB University</i>
+                </p>
+                <a href="#about" class="inline-block bg-brand-magenta text-light-text font-bold py-3 px-8 rounded-lg hover:opacity-90 transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-brand-magenta/30">
+                    Tentang Saya
+                </a>
+            </div>
+        </section>
+
+        <div class="container mx-auto px-6"><div class="h-px bg-dark-card"></div></div>
+
+        <section id="about" class="bg-dark-bg flex items-center py-20 px-6">
+            <div class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 text-center md:text-left">
+                <div class="flex-shrink-0">
+                    <img src="img/1.jpg" alt="Foto Profil" class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover border-8 border-brand-cyan shadow-lg">
+                </div>
+                <div class="max-w-xl">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-2">Tentang Saya</h2>
+                    <p class="text-xl font-semibold text-brand-cyan mb-4"><b>Maulana Syarif Hidayatullah</b></p>
+                    <p class="leading-relaxed text-light-text/80 mb-8 text-justify">Halo! Saya Maulana Syarif Hidayatullah, bisa dipanggil Alan/Maul. Saya adalah mahasiswa dari program studi Ilmu Komputer angkatan 61 dengan NIM M0403241049 dan tergabung dalam proxy Borel.
+Saya lahir dan besar di "Kota Keris", yaitu Kabupaten Sumenep, yang terletak di ujung timur Pulau Madura. Di luar kegiatan akademik, saya memiliki minat pada programming,bermain game FPS, dan Nonton.
+Saya berharap dapat belajar banyak hal baru dan berkolaborasi dengan teman-teman semua di perkuliahan ini. Jangan ragu untuk menyapa jika kita bertemu di kampus.
+Terima kasih dan salam kenal!</p>
+                    <a href="#contact" class="inline-block bg-brand-cyan text-dark-bg font-bold py-3 px-8 rounded-lg hover:opacity-90 transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-brand-cyan/30">Hubungi Saya</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container mx-auto px-6"><div class="h-px bg-dark-card"></div></div>
+
+        <section id="contact" class="bg-dark-bg py-20 px-6">
+            <div class="container mx-auto max-w-4xl text-center">
+                <h2 class="text-4xl md:text-5xl font-bold">Hubungi Saya</h2>
+                <p class="text-light-text/80 mt-4 mb-8 text-lg">Tertarik untuk berkolaborasi atau punya pertanyaan? Jangan ragu untuk menghubungi saya.</p>
+                <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-6">
+                    <a href="mailto:maulanash1117@gmail.com" class="text-center group"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12 mx-auto text-brand-magenta group-hover:text-brand-cyan transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg><p class="mt-2 font-semibold">Email</p></a>
+                    <a href="https://wa.me/6281326539780" target="_blank" class="text-center group"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12 mx-auto text-brand-magenta group-hover:text-brand-cyan transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.206 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg><p class="mt-2 font-semibold">WhatsApp</p></a>
+                    <a href="https://www.instagram.com/m4ulanaa.sh" target="_blank" class="text-center group"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12 mx-auto text-brand-magenta group-hover:text-brand-cyan transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"/></svg><p class="mt-2 font-semibold">Instagram</p></a>
+                    <a href="https://www.linkedin.com/in/maulanash1711" target="_blank" class="text-center group"><svg xmlns="" class="h-10 w-10 md:h-12 md:w-12 mx-auto text-brand-magenta group-hover:text-brand-cyan transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg><p class="mt-2 font-semibold">LinkedIn</p></a>
+                    <a href="https://github.com/m4ulanaash" target="_blank" class="text-center group"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12 mx-auto text-brand-magenta group-hover:text-brand-cyan transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg><p class="mt-2 font-semibold">GitHub</p></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark-card text-light-text/70 py-6">
+        <div class="container mx-auto text-center px-6">
+            <p>&copy; 2025 Maulana Syarif Hidayatullah. Dibuat dengan Tailwind CSS.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- SCRIPT UNTUK HAMBURGER MENU ---
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+        const navLinksAll = document.querySelectorAll('#nav-menu a');
+
+        hamburgerBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+
+        // Menutup menu setelah link di klik (di mobile)
+        navLinksAll.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) { // 768px adalah breakpoint default `md` di Tailwind
+                    navMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // --- SCRIPT UNTUK ACTIVE NAV LINK SAAT SCROLL ---
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a.nav-link');
+        
+        const changeNavOnScroll = () => {
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 150) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+                currentSection = sections[sections.length - 1].getAttribute('id');
+            }
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-brand-magenta', 'border-b-2', 'border-brand-magenta', 'pb-1');
+                link.classList.add('hover:text-brand-magenta');
+                if (link.getAttribute('href').substring(1) === currentSection) {
+                    link.classList.add('text-brand-magenta', 'border-b-2', 'border-brand-magenta', 'pb-1');
+                    link.classList.remove('hover:text-brand-magenta');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', changeNavOnScroll);
+        document.addEventListener('DOMContentLoaded', changeNavOnScroll);
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const h1Element = document.getElementById('typing-h1');
+            const pElement = document.getElementById('typing-p');
+            const h1Text = "Selamat Datang di Portofolio Saya";
+            const pText = "Maulana Syarif Hidayatullah";
+            const cursorSpan = '<span class="typing-cursor" aria-hidden="true"></span>';
+            function typeWriter(element, text, speed, callback) {
+                let i = 0;
+                element.innerHTML = '';
+                function type() {
+                    if (i < text.length) {
+                        element.innerHTML = text.substring(0, i + 1) + cursorSpan;
+                        i++;
+                        setTimeout(type, speed);
+                    } else {
+                        element.innerHTML = text; 
+                        if (callback) {
+                            setTimeout(callback, 500);
+                        }
+                    }
+                }
+                type();
+            }
+            typeWriter(h1Element, h1Text, 100, () => {
+                typeWriter(pElement, pText, 120);
+            });
+        });
+    </script>
+
+</body>
+</html>
